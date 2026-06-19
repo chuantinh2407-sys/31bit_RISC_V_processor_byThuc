@@ -1,42 +1,56 @@
 # 32-bit Pipelined RISC-V Processor
 
-![Project Overview](image_4a89ec.png)
+[![SystemVerilog](https://img.shields.io/badge/Language-SystemVerilog-blue.svg)]()
+[![Hardware Design](https://img.shields.io/badge/Domain-IC_Design-red.svg)]()
 
-## Overview
-This repository contains a high-performance **32-bit Pipelined RISC-V Processor** design, implemented using Verilog/SystemVerilog. The design focuses on optimizing instruction throughput through a classic pipelining architecture.
+## Abstract
+This repository hosts a robust implementation of a **32-bit Pipelined RISC-V Processor**. Engineered with a focus on high-throughput performance, the architecture follows classic RISC-V pipelining principles to optimize cycle efficiency and hardware resource utilization. As shown in image_4992c5.png, the project is structured for modularity and scalability.
 
-## Architecture Highlights
-The processor implements a multi-stage pipeline designed to enhance performance and ensure efficient hardware utilization:
+## Core Architecture
+The design utilizes a standard 5-stage pipeline to maximize instruction throughput:
 
-*   **Fetch Stage (`fetch_stage.v`)**: Instruction retrieval from memory.
-*   **Decode Stage (`decode_stage.v`)**: Instruction decoding and register file access.
-*   **Execute Stage (`execute_stage.v`)**: ALU operations and address calculation.
-*   **Memory Stage (`memory_stage.v`)**: Data memory read/write operations.
-*   **Writeback Stage (`writeback_stage.v`)**: Updating the register file.
-*   **Hazard Unit (`hazard_unit.v`)**: Advanced hazard detection and forwarding logic to maintain pipeline integrity.
+*   **Instruction Fetch (IF)**: Efficient instruction retrieval from memory.
+*   **Instruction Decode (ID)**: Accurate decoding and register file operand access.
+*   **Execute (EX)**: High-speed ALU operations and effective address calculation.
+*   **Memory Access (MEM)**: Data memory interface management.
+*   **Write-Back (WB)**: Register file commit stage.
+*   **Hazard Unit**: Implements advanced forwarding and stall logic to ensure data integrity across pipeline stages.
 
- Project Structure
+## Repository Structure
 ```text
-/
-├── Sources/          # Core Verilog/SystemVerilog RTL modules
-├── Testbench/        # Verification environment (tb_riscv_pipeline.v)
-└── Assembly_program.mem # Memory initialization file for testing
+.
+├── Sources/            # RTL design modules (Verilog/SystemVerilog)
+│   ├── fetch_stage.v
+│   ├── decode_stage.v
+│   ├── execute_stage.v
+│   ├── memory_stage.v
+│   ├── writeback_stage.v
+│   └── hazard_unit.v
+├── Testbench/          # Verification suite
+│   └── tb_riscv_pipeline.v
+└── Assembly_program.mem # Memory initialization for testing.
 ```
 
-Getting Started
-Requirements: Ensure you have an HDL simulation tool (e.g., ModelSim/QuestaSim or Vivado) configured for your environment.
+Technical Specifications & Workflow:
 
-Simulation: Use the provided tb_riscv_pipeline.v to verify the design functionality.
+Compile all modules within the Sources/ directory.
 
-Synthesis: The RTL is structured to be synthesis-friendly for FPGA implementation.
+Instantiate the processor in tb_riscv_pipeline.v.
 
-Contact
-If you have any questions, suggestions, or would like to collaborate, feel free to reach out:
+Execute simulation to monitor pipeline signal behavior and register file updates.
 
-Name: NGUYEN VAN THUC
+FPGA Readiness:
+The RTL code is crafted with synthesis constraints in mind, ensuring compatibility with standard FPGA platforms (e.g., Xilinx Vivado flow).
 
-Phone: 0961072793
+Author & Contact
+NGUYEN VAN THUC
 
-Email: chuantinh2407@gmail.com
+Student at Ho Chi Minh City University of Technology and Education (HCMUTE)
 
-Developed as part of advanced IC Design studies.
+For technical inquiries, collaboration, or feedback regarding the RISC-V implementation:
+
+📧 Email: chuantinh2407@gmail.com
+
+📱 Phone: +84 961 072 793
+
+Disclaimer: Developed as part of advanced IC Design studies. All rights reserved.
