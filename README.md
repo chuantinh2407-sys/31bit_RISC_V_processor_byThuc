@@ -15,12 +15,13 @@ The processor implements a multi-stage pipeline designed to enhance performance 
 *   **Writeback Stage (`writeback_stage.v`)**: Updating the register file.
 *   **Hazard Unit (`hazard_unit.v`)**: Advanced hazard detection and forwarding logic to maintain pipeline integrity.
 
-## Project Structure
+ Project Structure
 ```text
 /
 ├── Sources/          # Core Verilog/SystemVerilog RTL modules
 ├── Testbench/        # Verification environment (tb_riscv_pipeline.v)
 └── Assembly_program.mem # Memory initialization file for testing
+```
 
 Getting Started
 Requirements: Ensure you have an HDL simulation tool (e.g., ModelSim/QuestaSim or Vivado) configured for your environment.
