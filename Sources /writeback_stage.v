@@ -1,0 +1,29 @@
+// WRITE BACK - WB
+
+module writeback_stage (
+    input  wire        RegWriteW,
+    input  wire [1:0]  ResultSrcW,
+    input  wire [31:0] AluResultW,
+    input  wire [31:0] ReaddataW,
+    input  wire [31:0] PCPlus4W,
+    input  wire [4:0]  RDW_in,
+
+    // Outputs
+    output reg  [31:0] ResultW,
+    output wire [4:0]  RDW,
+    output wire        RegWriteW_out
+);
+    assign RDW          = RDW_in;
+    assign RegWriteW_out = RegWriteW;
+
+    // 3-to-1 MUX 
+    always @(*) begin
+        case (ResultSrcW)
+            2'b00:   ResultW = AluResultW;
+            2'b01:   ResultW = ReaddataW;
+            2'b10:   ResultW = PCPlus4W;
+            default: ResultW = AluResultW;
+        endcase
+    end
+
+endmodule

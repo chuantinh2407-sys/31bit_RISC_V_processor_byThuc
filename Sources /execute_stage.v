@@ -1,0 +1,197 @@
+// EXECUTE STAGE - EX
+
+module execute_stage (
+    input  wire        CLK,
+    input  wire        RESET,
+
+    // From ID/EX
+    input  wire        RegWriteE,
+    input  wire [1:0]  ResultSrcE,
+    input  wire        MemWriteE,
+    input  wire        BranchE,
+    input  wire        JalE,
+    input  wire        JalrE,
+    input  wire        ALUSrcE,
+    input  wire [4:0]  ALUControlE,
+    input  wire [4:0]  ShamtE,
+
+    // From ID/EX
+    input  wire [31:0] RD1E,
+    input  wire [31:0] RD2E,
+    input  wire [31:0] PCE,
+    input  wire [31:0] Imm_Ext_E,
+    input  wire [31:0] PCPlus4E,
+    input  wire [4:0]  RDE,
+    input  wire [4:0]  RS1E,
+    input  wire [4:0]  RS2E,
+
+    // From Hazard Unit
+    input  wire [1:0]  ForwardAE,
+    input  wire [1:0]  ForwardBE,
+
+    // from EX/MA register
+    input  wire [31:0] ALUResultM_fwd,  
+
+
+    input  wire [31:0] ResultW_fwd,     
+    // Outputs
+    output wire [1:0]  PCSrcE,
+    output wire [31:0] PCTargetE,
+    output wire [31:0] ResultE,
+    // To EX/MA pipeline register outputs
+    output reg  [31:0] ALUResultM,
+    output reg  [31:0] WriteDataM,
+    output reg         RegWriteM,
+    output reg         MemWriteM,
+    output reg  [1:0]  ResultSrcM,
+    output reg  [4:0]  RDM,
+    output reg  [31:0] PCPlus4M
+);
+
+    // Forwarding MUX for SrcA 
+    reg [31:0] SrcA_raw;
+    always @(*) begin
+        case (ForwardAE)
+            2'b00: SrcA_raw = RD1E;
+            2'b01: SrcA_raw = ResultW_fwd;
+            2'b10: SrcA_raw = ALUResultM_fwd;
+            default: SrcA_raw = RD1E;
+        endcase
+    end
+
+    // Forwarding MUX for SrcB 
+    reg [31:0] SrcB_reg_fwd;
+    always @(*) begin
+        case (ForwardBE)
+            2'b00: SrcB_reg_fwd = RD2E;
+            2'b01: SrcB_reg_fwd = ResultW_fwd;
+            2'b10: SrcB_reg_fwd = ALUResultM_fwd;
+            default: SrcB_reg_fwd = RD2E;
+        endcase
+    end
+
+    //  ALUSrc MUX
+    wire [31:0] SrcB = ALUSrcE ? Imm_Ext_E : SrcB_reg_fwd;
+
+    //  ALU 
+    wire [31:0] ALUResult;
+    wire        Zero;
+
+    alu u_alu (
+        .SrcA      (SrcA_raw),
+        .SrcB      (SrcB),
+        .ALUControl(ALUControlE),
+        .Shamt     (ShamtE),
+        .ALUResult (ALUResult),
+        .Zero      (Zero)
+    );
+
+   // Branch adder
+    assign PCTargetE = PCE + Imm_Ext_E;
+
+   // For JALR to IF
+    assign ResultE = ALUResult;
+
+   // PCSrc MUX
+    pcsrc_logic u_pcsrc (
+        .Zero    (Zero),
+        .BranchE (BranchE),
+        .JalE    (JalE),
+        .JalrE   (JalrE),
+        .ALUControlE(ALUControlE),
+        .PCSrcE  (PCSrcE)
+    );
+
+   //  EX/MA Pipeline Register 
+    always @(posedge CLK or posedge RESET) begin
+        if (RESET) begin
+            ALUResultM <= 32'd0;
+            WriteDataM <= 32'd0;
+            RegWriteM  <= 1'b0;
+            MemWriteM  <= 1'b0;
+            ResultSrcM <= 2'b00;
+            RDM        <= 5'd0;
+            PCPlus4M   <= 32'd0;
+        end else begin
+            ALUResultM <= ALUResult;
+            WriteDataM <= SrcB_reg_fwd; 
+            RegWriteM  <= RegWriteE;
+            MemWriteM  <= MemWriteE;
+            ResultSrcM <= ResultSrcE;
+            RDM        <= RDE;
+            PCPlus4M   <= PCPlus4E;
+        end
+    end
+
+endmodule
+
+
+// ALU - Arithmetic Logic Unit 
+module alu (
+    input  wire [31:0] SrcA,
+    input  wire [31:0] SrcB,
+    input  wire [4:0]  ALUControl,
+    input  wire [4:0]  Shamt,
+    output reg  [31:0] ALUResult,
+    output wire        Zero
+);
+    assign Zero = (ALUResult == 32'd0);
+
+    always @(*) begin
+        case (ALUControl)
+            5'b00000: ALUResult = SrcA + SrcB;                          // LW/SW ADD
+            5'b00001: ALUResult = SrcA - SrcB;                          // BEQ (sub, check zero)
+            5'b00010: ALUResult = SrcA + SrcB;                          // JALR (addr calc)
+            5'b00011: ALUResult = SrcA - SrcB;                          // BNE
+            5'b00100: ALUResult = ($signed(SrcA) < $signed(SrcB)) ? 32'd1 : 32'd0; // BLT
+            5'b00101: ALUResult = ($signed(SrcA) >= $signed(SrcB)) ? 32'd1 : 32'd0;// BGE
+            5'b00110: ALUResult = SrcA + SrcB;                          // ADD/ADDI
+            5'b00111: ALUResult = SrcA - SrcB;                          // SUB
+            5'b01000: ALUResult = SrcA << SrcB[4:0];                    // SLL
+            5'b01001: ALUResult = SrcA << Shamt;                        // SLLI
+            5'b01010: ALUResult = ($signed(SrcA) < $signed(SrcB)) ? 32'd1 : 32'd0; // SLT/SLTI
+            5'b01011: ALUResult = SrcA ^ SrcB;                          // XOR/XORI
+            5'b01100: ALUResult = SrcA >> SrcB[4:0];                    // SRL
+            5'b01101: ALUResult = $signed(SrcA) >>> SrcB[4:0];         // SRA
+            5'b01110: ALUResult = SrcA >> Shamt;                        // SRLI
+            5'b01111: ALUResult = $signed(SrcA) >>> Shamt;             // SRAI
+            5'b10000: ALUResult = SrcA | SrcB;                          // OR/ORI
+            5'b10001: ALUResult = SrcA & SrcB;                          // AND/ANDI
+            5'b10010: ALUResult = SrcA + SrcB;                          // JAL (PC+imm handled in adder)
+            default:  ALUResult = 32'd0;
+        endcase
+    end
+endmodule
+
+
+// PCSrc MUX
+module pcsrc_logic (
+    input  wire        Zero,
+    input  wire        BranchE,
+    input  wire        JalE,
+    input  wire        JalrE,
+    input  wire [4:0]  ALUControlE,
+    output reg  [1:0]  PCSrcE
+);
+    
+    reg branch_taken;
+
+    always @(*) begin
+        branch_taken = 1'b0;
+        case (ALUControlE)
+            5'b00001: branch_taken = Zero;          // BEQ
+            5'b00011: branch_taken = ~Zero;         // BNE
+            5'b00100: branch_taken = ~Zero;         // BLT 
+            default:  branch_taken = 1'b0;	    // BGE
+        endcase
+    end
+
+    always @(*) begin
+        if (JalrE)
+            PCSrcE = 2'b10;
+        else if ((BranchE && branch_taken) || JalE)
+            PCSrcE = 2'b01;
+        else
+            PCSrcE = 2'b00;
+    end
+endmodule

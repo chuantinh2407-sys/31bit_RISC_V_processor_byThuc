@@ -1,0 +1,56 @@
+# Loading project 32_bit_pipelining_RISC_V_Processor
+# Compile of tb_riscv_pipeline.v was successful.
+# reading /home/winny-02/intelFPGA/20.1/modelsim_ase/linuxaloem/../modelsim.ini
+# Loading project 16_bit_Pipelining_RISC_V_Processor
+# Compile of tb_riscv16.v was successful.
+# Compile of tb_riscv16.v was successful.
+# Load canceled
+# Compile of alu.v was successful.
+# Compile of control_unit.v was successful.
+# Compile of hazard_unit.v was successful.
+# Compile of imm_extend.v was successful.
+# Compile of register_file.v was successful.
+# Compile of riscv16_pipeline.v was successful.
+# Compile of tb_riscv16.v was successful.
+# 7 compiles, 0 failed with no errors.
+vsim work.tb_riscv16
+# vsim work.tb_riscv16 
+# Start time: 16:02:40 on Jun 02,2026
+# Loading work.tb_riscv16
+# Loading work.riscv16_pipeline
+# Loading work.control_unit
+# Loading work.register_file
+# Loading work.imm_extend
+# Loading work.alu
+# Loading work.hazard_unit
+add wave -position insertpoint sim:/tb_riscv16/dut/*
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# End time: 16:04:10 on Jun 02,2026, Elapsed time: 0:01:30
+# Errors: 0, Warnings: 6

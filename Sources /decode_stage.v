@@ -1,0 +1,375 @@
+// DECODE STAGE - ID
+module decode_stage (
+    input  wire        CLK,
+    input  wire        RESET,
+
+    // From IF/ID
+    input  wire [31:0] InstrD,
+    input  wire [31:0] PCD,
+    input  wire [31:0] PCPlus4D,
+
+    // From WB stage
+    input  wire        RegWriteW,
+    input  wire [4:0]  RDW,
+    input  wire [31:0] ResultW,
+    // Flush ID/EX 
+    input  wire        ClearE,
+
+    // Outputs to EX stage
+    output reg         RegWriteE,
+    output reg  [1:0]  ResultSrcE,
+    output reg         MemWriteE,
+    output reg         MemtoRegE,
+    output reg         BranchE,
+    output reg         JalE,
+    output reg         JalrE,
+    output reg         ALUSrcE,
+    output reg  [4:0]  ALUControlE,
+    output reg  [4:0]  ShamtE,
+    output reg  [31:0] RD1E,
+    output reg  [31:0] RD2E,
+    output reg  [31:0] PCE,
+    output reg  [31:0] Imm_Ext_E,
+    output reg  [31:0] PCPlus4E,
+    output reg  [4:0]  RS1E,
+    output reg  [4:0]  RS2E,
+    output reg  [4:0]  RDE,
+
+    // For hazard unit
+    output wire [4:0]  RS1D,
+    output wire [4:0]  RS2D
+);
+
+    // Instruction
+    wire [6:0] op     = InstrD[6:0];
+    wire [2:0] funct3 = InstrD[14:12];
+    wire [6:0] funct7 = InstrD[31:25];
+    wire [4:0] rs1    = InstrD[19:15];
+    wire [4:0] rs2    = InstrD[24:20];
+    wire [4:0] rd     = InstrD[11:7];
+    wire [4:0] shamt  = InstrD[24:20];
+
+    assign RS1D = rs1;
+    assign RS2D = rs2;
+
+    // Control Unit
+    wire        RegWriteD;
+    wire [1:0]  ResultSrcD;
+    wire        MemWriteD;
+    wire        MemtoRegD;
+    wire        BranchD;
+    wire        JalD;
+    wire        JalrD;
+    wire        ALUSrcD;
+    wire [1:0]  ImmSrcD;
+    wire [1:0]  ALUOpD;
+    wire [4:0]  ALUControlD;
+
+    control_unit u_ctrl (
+        .op         (op),
+        .funct3     (funct3),
+        .funct7     (funct7),
+        .RegWrite   (RegWriteD),
+        .ResultSrc  (ResultSrcD),
+        .MemWrite   (MemWriteD),
+        .MemtoReg   (MemtoRegD),
+        .Branch     (BranchD),
+        .Jal        (JalD),
+        .Jalr       (JalrD),
+        .ALUSrc     (ALUSrcD),
+        .ImmSrc     (ImmSrcD),
+        .ALUControl (ALUControlD)
+    );
+
+    // Register File
+    wire [31:0] RD1D, RD2D;
+
+    regfile u_regfile (
+        .CLK          (CLK),
+        .write_enable (RegWriteW),
+        .read_rs1     (rs1),
+        .read_rs2     (rs2),
+        .write_reg    (RDW),
+        .write_data   (ResultW),
+        .read_data_rs1(RD1D),
+        .read_data_rs2(RD2D)
+    );
+
+    // Sign Extend 
+    wire [31:0] ImmExtD;
+
+    extend u_extend (
+        .Instr   (InstrD[31:7]),
+        .ImmSrc  (ImmSrcD),
+        .ImmExt  (ImmExtD)
+    );
+
+    // ID/EX Pipeline Register 
+    always @(posedge CLK or posedge RESET) begin
+        if (RESET || ClearE) begin
+            RegWriteE   <= 1'b0;
+            ResultSrcE  <= 2'b00;
+            MemWriteE   <= 1'b0;
+            MemtoRegE   <= 1'b0;
+            BranchE     <= 1'b0;
+            JalE        <= 1'b0;
+            JalrE       <= 1'b0;
+            ALUSrcE     <= 1'b0;
+            ALUControlE <= 5'b00000;
+            ShamtE      <= 5'b00000;
+            RD1E        <= 32'd0;
+            RD2E        <= 32'd0;
+            PCE         <= 32'd0;
+            Imm_Ext_E   <= 32'd0;
+            PCPlus4E    <= 32'd0;
+            RS1E        <= 5'd0;
+            RS2E        <= 5'd0;
+            RDE         <= 5'd0;
+        end else begin
+            RegWriteE   <= RegWriteD;
+            ResultSrcE  <= ResultSrcD;
+            MemWriteE   <= MemWriteD;
+            MemtoRegE   <= MemtoRegD;
+            BranchE     <= BranchD;
+            JalE        <= JalD;
+            JalrE       <= JalrD;
+            ALUSrcE     <= ALUSrcD;
+            ALUControlE <= ALUControlD;
+            ShamtE      <= shamt;
+            RD1E        <= RD1D;
+            RD2E        <= RD2D;
+            PCE         <= PCD;
+            Imm_Ext_E   <= ImmExtD;
+            PCPlus4E    <= PCPlus4D;
+            RS1E        <= rs1;
+            RS2E        <= rs2;
+            RDE         <= rd;
+        end
+    end
+
+endmodule
+
+
+// Control Unit
+module control_unit (
+    input  wire [6:0] op,
+    input  wire [2:0] funct3,
+    input  wire [6:0] funct7,
+    output reg        RegWrite,
+    output reg  [1:0] ResultSrc,
+    output reg        MemWrite,
+    output reg        MemtoReg,
+    output reg        Branch,
+    output reg        Jal,
+    output reg        Jalr,
+    output reg        ALUSrc,
+    output reg  [1:0] ImmSrc,
+    output reg  [4:0] ALUControl
+);
+    reg [1:0] ALUOp;
+
+    always @(*) begin
+        // defaults
+        RegWrite  = 1'b0;
+        ResultSrc = 2'b00;
+        MemWrite  = 1'b0;
+        MemtoReg  = 1'b0;
+        Branch    = 1'b0;
+        Jal       = 1'b0;
+        Jalr      = 1'b0;
+        ALUSrc    = 1'b0;
+        ImmSrc    = 2'b00;
+        ALUOp     = 2'b00;
+
+        case (op)
+            7'b0000011: begin // I-Type Load 
+                RegWrite  = 1'b1;
+                ResultSrc = 2'b01; // From memory
+                MemtoReg  = 1'b1;
+                ALUSrc    = 1'b1;
+                ImmSrc    = 2'b00;
+                ALUOp     = 2'b00;
+            end
+            7'b0100011: begin // S-Type Store
+                MemWrite  = 1'b1;
+                ALUSrc    = 1'b1;
+                ImmSrc    = 2'b01;
+                ALUOp     = 2'b00;
+            end
+            7'b1100011: begin // B-Type Branch
+                Branch    = 1'b1;
+                ImmSrc    = 2'b10;
+                ALUOp     = 2'b01;
+            end
+            7'b1100111: begin // J-Type JALR
+                RegWrite  = 1'b1;
+                ResultSrc = 2'b10; 
+                Jal       = 1'b1;
+                Jalr      = 1'b1;
+                ALUSrc    = 1'b1;
+                ImmSrc    = 2'b00;
+                ALUOp     = 2'b01;
+            end
+            7'b0010011: begin // I-Type Arithmetic 
+                RegWrite  = 1'b1;
+                ResultSrc = 2'b00;
+                ALUSrc    = 1'b1;
+                ImmSrc    = 2'b00;
+                ALUOp     = 2'b10;
+            end
+            7'b0110011: begin // R-Type Arithmetic
+                RegWrite  = 1'b1;
+                ResultSrc = 2'b00;
+                ALUOp     = 2'b10;
+            end
+            7'b1101111: begin // J-Type JAL
+                RegWrite  = 1'b1;
+                ResultSrc = 2'b10; 
+                Jal       = 1'b1;
+                ImmSrc    = 2'b11;
+                ALUOp     = 2'b11;
+            end
+            default: begin end
+        endcase
+    end
+
+  
+    wire [2:0] aluop_combo = {op[5], funct7[5], op[2]};
+
+    always @(*) begin
+        ALUControl = 5'b00000;
+        case (ALUOp)
+            2'b00: ALUControl = 5'b00000; // LW/SW -> ADD
+            2'b01: begin // Branch/JALR
+                case (funct3)
+                    3'b000: ALUControl = (aluop_combo[1] == 1'b1 && aluop_combo[0] == 1'b0) ?
+                                          5'b00001 : // BEQ
+                                          5'b00010;  // JALR 
+                    3'b001: ALUControl = 5'b00011;   // BNE
+                    3'b100: ALUControl = 5'b00100;   // BLT
+                    3'b101: ALUControl = 5'b00101;   // BGE
+                    default: ALUControl = 5'b00001;
+                endcase
+            end
+            2'b10: begin // Logic and Arithmetic
+                case (funct3)
+                    3'b000: begin
+                        if (aluop_combo == 3'b110)
+                            ALUControl = 5'b00111; // SUB
+                        else
+                            ALUControl = 5'b00110; // ADD/ADDI
+                    end
+                    3'b001: begin
+                        if (aluop_combo[2] == 1'b1)
+                            ALUControl = 5'b01000; // SLL
+                        else
+                            ALUControl = 5'b01001; // SLLI
+                    end
+                    3'b010: ALUControl = 5'b01010;  // SLT/SLTI
+                    3'b100: ALUControl = 5'b01011;  // XOR/XORI
+                    3'b101: begin
+                        case (aluop_combo)
+                            3'b100: ALUControl = 5'b01100; // SRL
+                            3'b110: ALUControl = 5'b01101; // SRA
+                            3'b000: ALUControl = 5'b01110; // SRLI
+                            3'b010: ALUControl = 5'b01111; // SRAI
+                            default: ALUControl = 5'b01100;
+                        endcase
+                    end
+                    3'b110: ALUControl = 5'b10000;  // OR/ORI
+                    3'b111: ALUControl = 5'b10001;  // AND/ANDI
+                    default: ALUControl = 5'b00110;
+                endcase
+            end
+            2'b11: ALUControl = 5'b10010; // JAL
+            default: ALUControl = 5'b00000;
+        endcase
+    end
+
+endmodule
+
+
+// Register File - 32 x 32-bit registers
+module regfile (
+    input  wire        CLK,
+    input  wire        write_enable,
+    input  wire [4:0]  read_rs1,
+    input  wire [4:0]  read_rs2,
+    input  wire [4:0]  write_reg,
+    input  wire [31:0] write_data,
+    output wire [31:0] read_data_rs1,
+    output wire [31:0] read_data_rs2
+);
+    reg [31:0] regs [0:31];
+    integer i;
+    initial begin
+        // for (i = 0; i < 32; i = i + 1)
+          //  regs[i] = 32'd0;
+	regs[0] = 32'd0;
+	regs[1] = 32'd1;
+	regs[2] = 32'd2;
+	regs[3] = 32'd3;
+	regs[4] = 32'd4;
+	regs[5] = 32'd5;
+	regs[6] = 32'd6;
+	regs[7] = 32'd7;
+	regs[8] = 32'd8;
+	regs[9] = 32'd9;
+	regs[10] = 32'd10;
+	regs[11] = 32'd11;
+	regs[12] = 32'd12;
+	regs[13] = 32'd13;
+	regs[14] = 32'd14;
+	regs[15] = 32'd15;
+	regs[16] = 32'd16;
+	regs[17] = 32'd17;
+	regs[18] = 32'd18;
+	regs[19] = 32'd19;
+	regs[20] = 32'd20;
+	regs[21] = 32'd21;
+	regs[22] = 32'd22;
+	regs[23] = 32'd23;
+	regs[24] = 32'd24;
+	regs[25] = 32'd25;
+	regs[26] = 32'd26;
+	regs[27] = 32'd27;
+	regs[28] = 32'd28;
+	regs[29] = 32'd29;
+	regs[30] = 32'd30;
+	regs[31] = 32'd31;
+    end
+
+    always @(posedge CLK) begin
+        if (write_enable && write_reg != 5'd0)
+            regs[write_reg] <= write_data;
+    end
+
+    assign read_data_rs1 = (read_rs1 == 5'd0) ? 32'd0 :
+                           (write_enable && write_reg == read_rs1) ? write_data :
+                           regs[read_rs1];
+    assign read_data_rs2 = (read_rs2 == 5'd0) ? 32'd0 :
+                           (write_enable && write_reg == read_rs2) ? write_data :
+                           regs[read_rs2];
+endmodule
+
+
+// Sign/Zero Extend 
+module extend (
+    input  wire [31:7] Instr,   
+    input  wire [1:0]  ImmSrc,
+    output reg  [31:0] ImmExt
+);
+    always @(*) begin
+        case (ImmSrc)
+            2'b00: // I-type
+                ImmExt = {{20{Instr[31]}}, Instr[31:20]};
+            2'b01: // S-type
+                ImmExt = {{20{Instr[31]}}, Instr[31:25], Instr[11:7]};
+            2'b10: // B-type
+                ImmExt = {{19{Instr[31]}}, Instr[31], Instr[7], Instr[30:25], Instr[11:8], 1'b0};
+            2'b11: // J-type (JAL)
+                ImmExt = {{11{Instr[31]}}, Instr[31], Instr[19:12], Instr[20], Instr[30:21], 1'b0};
+            default: ImmExt = 32'd0;
+        endcase
+    end
+endmodule

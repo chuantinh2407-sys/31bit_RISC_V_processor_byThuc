@@ -1,0 +1,185 @@
+// RISC-V 32-bit 5-Stage Pipelined Processor
+
+module riscv_pipeline (
+    input  wire CLK,
+    input  wire RESET
+);
+
+    // IF stage
+    wire [31:0] InStrD, PCD, PCPlus4D;
+
+    // ID stage 
+    wire        RegWriteE_s, MemWriteE_s, MemtoRegE_s;
+    wire        BranchE_s, JalE_s, JalrE_s, ALUSrcE_s;
+    wire [1:0]  ResultSrcE_s;
+    wire [4:0]  ALUControlE_s, ShamtE_s;
+    wire [31:0] RD1E_s, RD2E_s, PCE_s, Imm_Ext_E_s, PCPlus4E_s;
+    wire [4:0]  RS1E_s, RS2E_s, RDE_s;
+    wire [4:0]  RS1D_s, RS2D_s;
+
+    // WB stage 
+    wire        RegWriteW_s;
+    wire [4:0]  RDW_s;
+    wire [31:0] ResultW_s;
+    wire [1:0]  ResultSrcW_s;
+
+    // EX stage 
+    wire [1:0]  PCSrcE_s;
+    wire [31:0] PCTargetE_s, ResultE_s;
+    wire [31:0] ALUResultM_s, WriteDataM_s;
+    wire        RegWriteM_s, MemWriteM_s;
+    wire [1:0]  ResultSrcM_s;
+    wire [4:0]  RDM_s;
+    wire [31:0] PCPlus4M_s;
+
+    // MA stage 
+    wire [31:0] AluResultW_s, ReaddataW_s, PCPlus4W_s;
+
+    // Hazard unit outputs 
+    wire        StallF_s, StallD_s, FlushD_s, FlushE_s;
+    wire [1:0]  ForwardAE_s, ForwardBE_s;
+
+   
+    // IF Stage
+    fetch_stage u_if (
+        .CLK       (CLK),
+        .RESET     (RESET),
+        .PCSrcE    (PCSrcE_s),
+        .PCTargetE (PCTargetE_s),
+        .ResultE   (ResultE_s),
+        .enableF   (~StallF_s),
+        .enableD   (~StallD_s),
+        .clearD    (FlushD_s),
+        .InStrD    (InStrD),
+        .PCD       (PCD),
+        .PCPlus4D  (PCPlus4D)
+    );
+
+    
+    // ID Stage
+    decode_stage u_id (
+        .CLK        (CLK),
+        .RESET      (RESET),
+        .InstrD     (InStrD),
+        .PCD        (PCD),
+        .PCPlus4D   (PCPlus4D),
+        .RegWriteW  (RegWriteW_s),
+        .RDW        (RDW_s),
+        .ResultW    (ResultW_s),
+        .ClearE     (FlushE_s),
+        .RegWriteE  (RegWriteE_s),
+        .ResultSrcE (ResultSrcE_s),
+        .MemWriteE  (MemWriteE_s),
+        .MemtoRegE  (MemtoRegE_s),
+        .BranchE    (BranchE_s),
+        .JalE       (JalE_s),
+        .JalrE      (JalrE_s),
+        .ALUSrcE    (ALUSrcE_s),
+        .ALUControlE(ALUControlE_s),
+        .ShamtE     (ShamtE_s),
+        .RD1E       (RD1E_s),
+        .RD2E       (RD2E_s),
+        .PCE        (PCE_s),
+        .Imm_Ext_E  (Imm_Ext_E_s),
+        .PCPlus4E   (PCPlus4E_s),
+        .RS1E       (RS1E_s),
+        .RS2E       (RS2E_s),
+        .RDE        (RDE_s),
+        .RS1D       (RS1D_s),
+        .RS2D       (RS2D_s)
+    );
+
+    // EX Stage
+    execute_stage u_ex (
+        .CLK          (CLK),
+        .RESET        (RESET),
+        .RegWriteE    (RegWriteE_s),
+        .ResultSrcE   (ResultSrcE_s),
+        .MemWriteE    (MemWriteE_s),
+        .BranchE      (BranchE_s),
+        .JalE         (JalE_s),
+        .JalrE        (JalrE_s),
+        .ALUSrcE      (ALUSrcE_s),
+        .ALUControlE  (ALUControlE_s),
+        .ShamtE       (ShamtE_s),
+        .RD1E         (RD1E_s),
+        .RD2E         (RD2E_s),
+        .PCE          (PCE_s),
+        .Imm_Ext_E    (Imm_Ext_E_s),
+        .PCPlus4E     (PCPlus4E_s),
+        .RDE          (RDE_s),
+        .RS1E         (RS1E_s),
+        .RS2E         (RS2E_s),
+        .ForwardAE    (ForwardAE_s),
+        .ForwardBE    (ForwardBE_s),
+        .ALUResultM_fwd(ALUResultM_s),
+        .ResultW_fwd  (ResultW_s),
+        .PCSrcE       (PCSrcE_s),
+        .PCTargetE    (PCTargetE_s),
+        .ResultE      (ResultE_s),
+        .ALUResultM   (ALUResultM_s),
+        .WriteDataM   (WriteDataM_s),
+        .RegWriteM    (RegWriteM_s),
+        .MemWriteM    (MemWriteM_s),
+        .ResultSrcM   (ResultSrcM_s),
+        .RDM          (RDM_s),
+        .PCPlus4M     (PCPlus4M_s)
+    );
+
+    // MA Stage
+    memory_stage u_ma (
+        .CLK        (CLK),
+        .RESET      (RESET),
+        .RegWriteM  (RegWriteM_s),
+        .ResultSrcM (ResultSrcM_s),
+        .MemWriteM  (MemWriteM_s),
+        .AluResultM (ALUResultM_s),
+        .WriteDataM (WriteDataM_s),
+        .RDM        (RDM_s),
+        .PCPlus4M   (PCPlus4M_s),
+        .RegWriteW  (RegWriteW_s),
+        .ResultSrcW (ResultSrcW_s),
+        .AluResultW (AluResultW_s),
+        .ReaddataW  (ReaddataW_s),
+        .RDW        (RDW_s),
+        .PCPlus4W   (PCPlus4W_s),
+        .RDM_out    ()
+    );
+
+  
+    // WB Stage
+    writeback_stage u_wb (
+        .RegWriteW    (RegWriteW_s),
+        .ResultSrcW   (ResultSrcW_s),
+        .AluResultW   (AluResultW_s),
+        .ReaddataW    (ReaddataW_s),
+        .PCPlus4W     (PCPlus4W_s),
+        .RDW_in       (RDW_s),
+        .ResultW      (ResultW_s),
+        .RDW          (),
+        .RegWriteW_out()
+    );
+
+    // Hazard Unit
+    hazard_unit u_haz (
+        .MemtoRegE  (MemtoRegE_s),
+        .RS1D       (RS1D_s),
+        .RS2D       (RS2D_s),
+        .RDE        (RDE_s),
+        .RS1E       (RS1E_s),
+        .RS2E       (RS2E_s),
+        .RDM        (RDM_s),
+        .RDW        (RDW_s),
+        .RegWriteM  (RegWriteM_s),
+        .RegWriteW  (RegWriteW_s),
+        .PCSrcE     (PCSrcE_s),
+        .RESET      (RESET),
+        .StallF     (StallF_s),
+        .StallD     (StallD_s),
+        .FlushD     (FlushD_s),
+        .FlushE     (FlushE_s),
+        .ForwardAE  (ForwardAE_s),
+        .ForwardBE  (ForwardBE_s)
+    );
+
+endmodule

@@ -1,0 +1,32 @@
+
+// ============================================================
+    // Test Program (RISC-V 32-bit machine code)
+    //
+    // Assembly:
+    //   0x00: addi x1, x0, 5        # x1 = 5
+    //   0x04: addi x2, x0, 3        # x2 = 3
+    //   0x08: add  x3, x1, x2       # x3 = 8   (data hazard -> forward)
+    //   0x0C: sub  x4, x3, x2       # x4 = 5   (data hazard -> forward)
+    //   0x10: and  x5, x1, x2       # x5 = 1
+    //   0x14: or   x6, x1, x2       # x6 = 7
+    //   0x18: xor  x7, x1, x2       # x7 = 6
+    //   0x1C: sll  x8, x1, x2       # x8 = 40
+    //   0x20: addi x9, x0, 100      # x9 = 100
+    //   0x24: sw   x1,  0(x9)       # mem[100] = 5
+    //   0x28: lw   x10, 0(x9)       # x10 = 5  (load-use: next instr uses x10)
+    //   0x2C: addi x10, x10, 1      # x10 = 6  (load-use stall)
+    //   0x30: addi x11, x0, 0       # x11 = 0
+    //   0x34: beq  x11, x0, +8      # branch taken: jump to 0x3C
+    //   0x38: addi x12, x0, 99      # flushed (should NOT execute)
+    //   0x3C: addi x13, x0, 42      # x13 = 42 (branch target)
+    //   0x40: addi x14, x0, 7       # x14 = 7
+    //   0x44: bne  x14, x0, +8      # branch taken: jump to 0x4C
+    //   0x48: addi x15, x0, 99      # flushed
+    //   0x4C: addi x16, x0, 55      # x16 = 55
+    //   0x50: jal  x17, +8          # x17 = 0x54, jump to 0x58
+    //   0x54: addi x18, x0, 99      # flushed
+    //   0x58: addi x19, x0, 77      # x19 = 77
+    //   0x5C: nop                   # (addi x0, x0, 0) - padding
+    //   0x60: nop
+    //   ...
+    // ============================================================

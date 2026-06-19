@@ -1,0 +1,310 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d/home/winny-02/Documents/file_of_modelsim/RISC_V_NO_PIPELINING_SV
+valu
+Z0 !s110 1780388012
+!i10b 1
+!s100 z7h905WDFhjQih:HS>4DA3
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I8eF_[jj2L9z3I33U^39Y^0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 d/home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor
+Z4 w1780384911
+Z5 8/home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Sources /execute_stage.v
+Z6 F/home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Sources /execute_stage.v
+!i122 106
+L0 130 35
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1780388012.000000
+Z9 !s107 /home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Sources /execute_stage.v|
+Z10 !s90 -reportprogress|300|-work|work|-stats=none|/home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Sources /execute_stage.v|
+!i113 1
+Z11 o-work work
+Z12 tCvgOpt 0
+vcontrol_unit
+R0
+!i10b 1
+!s100 KAiAE1jhFI0X:fNh_GhkS2
+R1
+IRzaHHfFg1mcF]6P>[F1GY1
+R2
+R3
+Z13 w1780384324
+Z14 8/home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Sources /decode_stage.v
+Z15 F/home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Sources /decode_stage.v
+!i122 105
+L0 154 136
+R7
+r1
+!s85 0
+31
+R8
+Z16 !s107 /home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Sources /decode_stage.v|
+Z17 !s90 -reportprogress|300|-work|work|-stats=none|/home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Sources /decode_stage.v|
+!i113 1
+R11
+R12
+vdecode_stage
+R0
+!i10b 1
+!s100 iTY9@bkfchcR:28O>2Qff0
+R1
+IR8Sk72hHEXcHHE3<G[8C33
+R2
+R3
+R13
+R14
+R15
+!i122 105
+L0 2 149
+R7
+r1
+!s85 0
+31
+R8
+R16
+R17
+!i113 1
+R11
+R12
+vexecute_stage
+R0
+!i10b 1
+!s100 FEMBS]LK<_F3IZiaSISU61
+R1
+I^dnkg<?J^`8X1ATg3Q[LE0
+R2
+R3
+R4
+R5
+R6
+!i122 106
+L0 3 124
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+vextend
+R0
+!i10b 1
+!s100 3FT:4[k?dMa8@Gn@23N3Q2
+R1
+Ihbm^8XJK?ddelMAVejTfE3
+R2
+R3
+R13
+R14
+R15
+!i122 105
+L0 357 19
+R7
+r1
+!s85 0
+31
+R8
+R16
+R17
+!i113 1
+R11
+R12
+vfetch_stage
+!s110 1780389482
+!i10b 1
+!s100 Zh5fz7Ol]2mGPAz8Y1f3N0
+R1
+IDE_3;kL1T3C0:n4=>6<_c2
+R2
+R3
+w1780389477
+8/home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Sources /fetch_stage.v
+F/home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Sources /fetch_stage.v
+!i122 113
+L0 2 66
+R7
+r1
+!s85 0
+31
+!s108 1780389482.000000
+!s107 /home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Sources /fetch_stage.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Sources /fetch_stage.v|
+!i113 1
+R11
+R12
+vhazard_unit
+R0
+!i10b 1
+!s100 Vj4m?QMATz0ENooR^1P3g1
+R1
+I;5:35`K`@kA`Wn[Jg0b=23
+R2
+R3
+w1780385261
+8/home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Sources /hazard_unit.v
+F/home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Sources /hazard_unit.v
+!i122 109
+L0 3 79
+R7
+r1
+!s85 0
+31
+R8
+!s107 /home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Sources /hazard_unit.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Sources /hazard_unit.v|
+!i113 1
+R11
+R12
+vmemory_stage
+R0
+!i10b 1
+!s100 WWC8<3SZQ:@_ozS:B0ZOn2
+R1
+I66[Pg7>PBNK2ncaBR@GGh0
+R2
+R3
+w1780385036
+8/home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Sources /memory_stage.v
+F/home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Sources /memory_stage.v
+!i122 107
+L0 3 64
+R7
+r1
+!s85 0
+31
+R8
+!s107 /home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Sources /memory_stage.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Sources /memory_stage.v|
+!i113 1
+R11
+R12
+vpcsrc_logic
+R0
+!i10b 1
+!s100 :n9S?on9UzRKFo:kG@38@2
+R1
+I;mAMRXdh6;kaXeZ4U`ElH2
+R2
+R3
+R4
+R5
+R6
+!i122 106
+L0 168 30
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+vregfile
+R0
+!i10b 1
+!s100 :WZ5hY7LkdCTjz:4BjjVM0
+R1
+InQ<J5KBo:]z93MU^6<;e52
+R2
+R3
+R13
+R14
+R15
+!i122 105
+L0 293 61
+R7
+r1
+!s85 0
+31
+R8
+R16
+R17
+!i113 1
+R11
+R12
+vriscv_pipeline
+R0
+!i10b 1
+!s100 dfJQB<TB[_n0kf2OIie@e0
+R1
+IaSbVDeAhfAZJ3U`az3J;c2
+R2
+R3
+w1780385419
+8/home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Sources /riscv_pipeline.v
+F/home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Sources /riscv_pipeline.v
+!i122 110
+L0 3 183
+R7
+r1
+!s85 0
+31
+R8
+!s107 /home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Sources /riscv_pipeline.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Sources /riscv_pipeline.v|
+!i113 1
+R11
+R12
+vtb_riscv_pipeline
+!s110 1780390170
+!i10b 1
+!s100 ?zcXD<59=_=>[_;FJH@R;2
+R1
+I6c^XcC3W]ZG;>HkcXUTR71
+R2
+R3
+w1780389743
+8/home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Testbench/tb_riscv_pipeline.v
+F/home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Testbench/tb_riscv_pipeline.v
+!i122 115
+L0 4 102
+R7
+r1
+!s85 0
+31
+!s108 1780390170.000000
+!s107 /home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Testbench/tb_riscv_pipeline.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Testbench/tb_riscv_pipeline.v|
+!i113 1
+R11
+R12
+vwriteback_stage
+R0
+!i10b 1
+!s100 HAEY9P=S<1C@W=J62`5X]3
+R1
+IbIS_9IAa0o7omAT12L9ni2
+R2
+R3
+w1780385074
+8/home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Sources /writeback_stage.v
+F/home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Sources /writeback_stage.v
+!i122 108
+L0 3 27
+R7
+r1
+!s85 0
+31
+R8
+!s107 /home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Sources /writeback_stage.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/winny-02/Documents/file_of_modelsim/32_bit_Pipelining_RISC_V_Processor/Sources /writeback_stage.v|
+!i113 1
+R11
+R12
