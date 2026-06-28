@@ -1,0 +1,1090 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Tue Jun 23 08:42:10 2026
+# Process ID: 8437
+# Current directory: /home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor
+# Command line: vivado ./vivado/project_data/vivado_work.xpr
+# Log file: /home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/vivado.log
+# Journal file: /home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/vivado.jou
+# Running On: nguyenvanthuc2407, OS: Linux, CPU Frequency: 2324.734 MHz, CPU Physical cores: 16, Host memory: 15981 MB
+#-----------------------------------------------------------
+start_gui
+open_project ./vivado/project_data/vivado_work.xpr
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.6 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kc705/1.6/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.6/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.7/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.4 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu116/1.4/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.5 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu116/1.5/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu1500:part0:1.2 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu1500/1.2/board.xml as part xcku115-flvb2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc707:part0:1.4 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc707/1.4/board.xml as part xc7vx485tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc709:part0:1.8 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc709/1.8/board.xml as part xc7vx690tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/2.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.1 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.2 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.1 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.6 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.6/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.7 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.7/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu110:part0:1.4 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu110/1.4/board.xml as part xcvu190-flgc2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.0 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.0/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.3 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.3/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.4 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.4/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128:part0:1.0 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu128/production/1.0/board.xml as part xcvu37p-fsvh2892-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu129/production/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu1525:part0:1.3 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu1525/1.3/board.xml as part xcvu9p-fsgd2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.0 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.1 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.1/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.0 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.1 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_mpsoc:part0:1.0 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_mpsoc/1.0/board.xml as part xczu19eg-ffvd1760-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_rfsoc:part0:1.0 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_rfsoc/1.0/board.xml as part xczu21dr-ffvd1156-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.0 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.1 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.1 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/2.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.1 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.2 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.1 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.0 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.1 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.1/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.2 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.0 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.1 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.1/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc706:part0:1.4 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zc706/1.4/board.xml as part xc7z045ffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.3 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.3/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.4 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.4/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.2 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.2/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.3 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.3/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.4 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.4/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1275:part0:1.0 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1275/1.0/board.xml as part xczu29dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1285:part0:1.0 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1285/1.0/board.xml as part xczu39dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208:part0:2.0 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208/production/2.0/board.xml as part xczu48dr-fsvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216:part0:2.0 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216/production/2.0/board.xml as part xczu49dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/vivado/project_data/vivado_work.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/data/ip'.
+open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:05 . Memory (MB): peak = 7826.777 ; gain = 369.461 ; free physical = 4143 ; free virtual = 12827
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_riscv_pipeline'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/vivado/project_data/vivado_work.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_riscv_pipeline' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/vivado/project_data/vivado_work.sim/sim_1/behav/xsim/imem32.mem'
+INFO: [SIM-utils-43] Exported '/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/vivado/project_data/vivado_work.sim/sim_1/behav/xsim/dmem32.mem'
+INFO: [SIM-utils-43] Exported '/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/vivado/project_data/vivado_work.sim/sim_1/behav/xsim/imem32.mem'
+INFO: [SIM-utils-43] Exported '/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/vivado/project_data/vivado_work.sim/sim_1/behav/xsim/dmem32.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/vivado/project_data/vivado_work.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj tb_riscv_pipeline_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/decode_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decode_stage
+INFO: [VRFC 10-311] analyzing module control_unit
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-311] analyzing module extend
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/execute_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module execute_stage
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module pcsrc_logic
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/fetch_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fetch_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/hazard_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hazard_unit
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/memory_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module memory_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/riscv_pipeline.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module riscv_pipeline
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/writeback_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module writeback_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/tb/tb_riscv_pipeline.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_riscv_pipeline
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/vivado/project_data/vivado_work.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/vivado/project_data/vivado_work.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_riscv_pipeline_behav xil_defaultlib.tb_riscv_pipeline xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/nguyen-van-thuc/ic_workspace/vanthuc/downloads/tools/Vivado/2023.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_riscv_pipeline_behav xil_defaultlib.tb_riscv_pipeline xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/riscv_pipeline.v" Line 7. Module riscv_pipeline doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/fetch_stage.v" Line 2. Module fetch_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/decode_stage.v" Line 2. Module decode_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/decode_stage.v" Line 154. Module control_unit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/decode_stage.v" Line 293. Module regfile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/decode_stage.v" Line 357. Module extend doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/execute_stage.v" Line 3. Module execute_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/execute_stage.v" Line 130. Module alu doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/execute_stage.v" Line 168. Module pcsrc_logic doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/memory_stage.v" Line 3. Module memory_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/writeback_stage.v" Line 3. Module writeback_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/hazard_unit.v" Line 3. Module hazard_unit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/riscv_pipeline.v" Line 7. Module riscv_pipeline doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/fetch_stage.v" Line 2. Module fetch_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/decode_stage.v" Line 2. Module decode_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/decode_stage.v" Line 154. Module control_unit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/decode_stage.v" Line 293. Module regfile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/decode_stage.v" Line 357. Module extend doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/execute_stage.v" Line 3. Module execute_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/execute_stage.v" Line 130. Module alu doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/execute_stage.v" Line 168. Module pcsrc_logic doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/memory_stage.v" Line 3. Module memory_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/writeback_stage.v" Line 3. Module writeback_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/hazard_unit.v" Line 3. Module hazard_unit doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fetch_stage
+Compiling module xil_defaultlib.control_unit
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.extend
+Compiling module xil_defaultlib.decode_stage
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.pcsrc_logic
+Compiling module xil_defaultlib.execute_stage
+Compiling module xil_defaultlib.memory_stage
+Compiling module xil_defaultlib.writeback_stage
+Compiling module xil_defaultlib.hazard_unit
+Compiling module xil_defaultlib.riscv_pipeline
+Compiling module xil_defaultlib.tb_riscv_pipeline
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_riscv_pipeline_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/vivado/project_data/vivado_work.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_riscv_pipeline_behav -key {Behavioral:sim_1:Functional:tb_riscv_pipeline} -tclbatch {tb_riscv_pipeline.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_riscv_pipeline.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+WARNING: Too many words specified in data file imem32.mem
+WARNING: Too many words specified in data file dmem32.mem
+ERROR: Could not open VCD file vivado/project_data/riscv_pipeline_wave.vcd for writing.
+
+=======================================================================================
+          [START SIMULATION] ADVANCED PIPELINE TRACKER USING OUTPUT PROBES             
+=======================================================================================
+
+[CYCLE 1]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000000 | Inst: 0x00500093 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x00000000 | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000000 | MemWriteEn: 0
+  [WB]  RD(Target):  0 | WritebackData: 0x00000000 | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 2]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000004 | Inst: 0x00300113 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x00000005 | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000000 | MemWriteEn: 0
+  [WB]  RD(Target):  0 | WritebackData: 0x00000000 | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 3]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000008 | Inst: 0x002081b3 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x00000003 | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000005 | MemWriteEn: 0
+  [WB]  RD(Target):  0 | WritebackData: 0x00000000 | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 4]
+  [IF]  StallF: 0
+  [ID]  PC: 0x0000000c | Inst: 0x40218233 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x00000008 | FwdAE: 01, FwdBE: 10 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000003 | MemWriteEn: 0
+  [WB]  RD(Target):  1 | WritebackData: 0x00000005 | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 5]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000010 | Inst: 0x0020f2b3 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x00000005 | FwdAE: 10, FwdBE: 01 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000003 | MemWriteEn: 0
+  [WB]  RD(Target):  2 | WritebackData: 0x00000003 | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 6]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000014 | Inst: 0x0020e333 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x00000001 | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000003 | MemWriteEn: 0
+  [WB]  RD(Target):  3 | WritebackData: 0x00000008 | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 7]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000018 | Inst: 0x0020c3b3 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x00000007 | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000003 | MemWriteEn: 0
+  [WB]  RD(Target):  4 | WritebackData: 0x00000005 | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 8]
+  [IF]  StallF: 0
+  [ID]  PC: 0x0000001c | Inst: 0x00209433 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x00000006 | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000003 | MemWriteEn: 0
+  [WB]  RD(Target):  5 | WritebackData: 0x00000001 | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 9]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000020 | Inst: 0x06400493 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x00000028 | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000003 | MemWriteEn: 0
+  [WB]  RD(Target):  6 | WritebackData: 0x00000007 | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 10]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000024 | Inst: 0x00148023 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x00000064 | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000003 | MemWriteEn: 0
+  [WB]  RD(Target):  7 | WritebackData: 0x00000006 | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 11]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000028 | Inst: 0x00048503 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x00000064 | FwdAE: 10, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000005 | MemWriteEn: 0
+  [WB]  RD(Target):  8 | WritebackData: 0x00000028 | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 12]
+  [IF]  StallF: 1
+  [ID]  PC: 0x0000002c | Inst: 0x00150513 | StallD: 1 | FlushD: 0
+  [EX]  ALUOut: 0x00000064 | FwdAE: 01, FwdBE: 00 | FlushE: 1 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000005 | MemWriteEn: 1
+  [WB]  RD(Target):  9 | WritebackData: 0x00000064 | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 13]
+  [IF]  StallF: 0
+  [ID]  PC: 0x0000002c | Inst: 0x00150513 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x00000000 | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000000 | MemWriteEn: 0
+  [WB]  RD(Target):  0 | WritebackData: 0x00000064 | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 14]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000030 | Inst: 0x00000593 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x00000006 | FwdAE: 01, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000000 | MemWriteEn: 0
+  [WB]  RD(Target): 10 | WritebackData: 0x00000005 | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 15]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000034 | Inst: 0x00058463 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x00000000 | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000005 | MemWriteEn: 0
+  [WB]  RD(Target):  0 | WritebackData: 0x00000000 | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 16]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000038 | Inst: 0x06300613 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x00000000 | FwdAE: 10, FwdBE: 00 | FlushE: 0 | BranchCtrl: 1
+  [MEM] WriteData: 0x00000000 | MemWriteEn: 0
+  [WB]  RD(Target): 10 | WritebackData: 0x00000006 | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 17]
+  [IF]  StallF: 0
+  [ID]  PC: 0x0000003c | Inst: 0x02a00693 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x00000063 | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000000 | MemWriteEn: 0
+  [WB]  RD(Target): 11 | WritebackData: 0x00000000 | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 18]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000040 | Inst: 0x00071463 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x0000002a | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000008 | MemWriteEn: 0
+  [WB]  RD(Target):  8 | WritebackData: 0x00000000 | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 19]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000044 | Inst: 0x06300793 | StallD: 0 | FlushD: 1
+  [EX]  ALUOut: 0x0000000e | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 1
+  [MEM] WriteData: 0x00000006 | MemWriteEn: 0
+  [WB]  RD(Target): 12 | WritebackData: 0x00000063 | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 20]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000000 | Inst: 0x00000013 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x00000063 | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000000 | MemWriteEn: 0
+  [WB]  RD(Target): 13 | WritebackData: 0x0000002a | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 21]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000048 | Inst: 0x03700813 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x00000000 | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000008 | MemWriteEn: 0
+  [WB]  RD(Target):  8 | WritebackData: 0x0000000e | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 22]
+  [IF]  StallF: 0
+  [ID]  PC: 0x0000004c | Inst: 0x008008ef | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x00000037 | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000000 | MemWriteEn: 0
+  [WB]  RD(Target): 15 | WritebackData: 0x00000063 | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 23]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000050 | Inst: 0x06300913 | StallD: 0 | FlushD: 1
+  [EX]  ALUOut: 0x00000028 | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000017 | MemWriteEn: 0
+  [WB]  RD(Target):  0 | WritebackData: 0x00000000 | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 24]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000000 | Inst: 0x00000013 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x00000063 | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000028 | MemWriteEn: 0
+  [WB]  RD(Target): 16 | WritebackData: 0x00000037 | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 25]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000054 | Inst: 0x04d00993 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x00000000 | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000008 | MemWriteEn: 0
+  [WB]  RD(Target): 17 | WritebackData: 0x00000050 | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 26]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000058 | Inst: 0x123452b7 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x0000004d | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000000 | MemWriteEn: 0
+  [WB]  RD(Target): 18 | WritebackData: 0x00000063 | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 27]
+  [IF]  StallF: 0
+  [ID]  PC: 0x0000005c | Inst: 0x00020317 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x00000030 | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x0000002a | MemWriteEn: 0
+  [WB]  RD(Target):  0 | WritebackData: 0x00000000 | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 28]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000060 | Inst: 0xf0028393 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x00000005 | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000008 | MemWriteEn: 0
+  [WB]  RD(Target): 19 | WritebackData: 0x0000004d | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 29]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000064 | Inst: 0x00439413 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xffffff01 | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000000 | MemWriteEn: 0
+  [WB]  RD(Target):  5 | WritebackData: 0x00000030 | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 30]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000068 | Inst: 0x40235493 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xfffff010 | FwdAE: 10, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000000 | MemWriteEn: 0
+  [WB]  RD(Target):  6 | WritebackData: 0x00000005 | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 31]
+  [IF]  StallF: 0
+  [ID]  PC: 0x0000006c | Inst: 0x00335513 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x00000001 | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000005 | MemWriteEn: 0
+  [WB]  RD(Target):  7 | WritebackData: 0xffffff01 | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 32]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000070 | Inst: 0x03242593 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x00000000 | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000003 | MemWriteEn: 0
+  [WB]  RD(Target):  8 | WritebackData: 0xfffff010 | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 33]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000074 | Inst: 0x00a4b613 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x00000001 | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000008 | MemWriteEn: 0
+  [WB]  RD(Target):  9 | WritebackData: 0x00000001 | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 34]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000078 | Inst: 0x05a54693 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x0000000b | FwdAE: 00, FwdBE: 01 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000063 | MemWriteEn: 0
+  [WB]  RD(Target): 10 | WritebackData: 0x00000000 | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 35]
+  [IF]  StallF: 0
+  [ID]  PC: 0x0000007c | Inst: 0x03c5e713 | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x0000005a | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x00000000 | MemWriteEn: 0
+  [WB]  RD(Target): 11 | WritebackData: 0x00000001 | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 36]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000080 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0x0000003d | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x0000001a | MemWriteEn: 0
+  [WB]  RD(Target): 12 | WritebackData: 0x0000000b | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 37]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000084 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0x0000001c | MemWriteEn: 0
+  [WB]  RD(Target): 13 | WritebackData: 0x0000005a | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 38]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000088 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target): 14 | WritebackData: 0x0000003d | RegWriteEn: 1
+  -------------------------------------------------------------------------------------
+
+[CYCLE 39]
+  [IF]  StallF: 0
+  [ID]  PC: 0x0000008c | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 40]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000090 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 41]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000094 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 42]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000098 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 43]
+  [IF]  StallF: 0
+  [ID]  PC: 0x0000009c | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 44]
+  [IF]  StallF: 0
+  [ID]  PC: 0x000000a0 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 45]
+  [IF]  StallF: 0
+  [ID]  PC: 0x000000a4 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 46]
+  [IF]  StallF: 0
+  [ID]  PC: 0x000000a8 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 47]
+  [IF]  StallF: 0
+  [ID]  PC: 0x000000ac | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 48]
+  [IF]  StallF: 0
+  [ID]  PC: 0x000000b0 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 49]
+  [IF]  StallF: 0
+  [ID]  PC: 0x000000b4 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 50]
+  [IF]  StallF: 0
+  [ID]  PC: 0x000000b8 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 51]
+  [IF]  StallF: 0
+  [ID]  PC: 0x000000bc | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 52]
+  [IF]  StallF: 0
+  [ID]  PC: 0x000000c0 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 53]
+  [IF]  StallF: 0
+  [ID]  PC: 0x000000c4 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 54]
+  [IF]  StallF: 0
+  [ID]  PC: 0x000000c8 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 55]
+  [IF]  StallF: 0
+  [ID]  PC: 0x000000cc | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 56]
+  [IF]  StallF: 0
+  [ID]  PC: 0x000000d0 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 57]
+  [IF]  StallF: 0
+  [ID]  PC: 0x000000d4 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 58]
+  [IF]  StallF: 0
+  [ID]  PC: 0x000000d8 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 59]
+  [IF]  StallF: 0
+  [ID]  PC: 0x000000dc | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 60]
+  [IF]  StallF: 0
+  [ID]  PC: 0x000000e0 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 61]
+  [IF]  StallF: 0
+  [ID]  PC: 0x000000e4 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 62]
+  [IF]  StallF: 0
+  [ID]  PC: 0x000000e8 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 63]
+  [IF]  StallF: 0
+  [ID]  PC: 0x000000ec | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 64]
+  [IF]  StallF: 0
+  [ID]  PC: 0x000000f0 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 65]
+  [IF]  StallF: 0
+  [ID]  PC: 0x000000f4 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 66]
+  [IF]  StallF: 0
+  [ID]  PC: 0x000000f8 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 67]
+  [IF]  StallF: 0
+  [ID]  PC: 0x000000fc | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 68]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000100 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 69]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000104 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 70]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000108 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 71]
+  [IF]  StallF: 0
+  [ID]  PC: 0x0000010c | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 72]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000110 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 73]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000114 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 74]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000118 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 75]
+  [IF]  StallF: 0
+  [ID]  PC: 0x0000011c | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 76]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000120 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 77]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000124 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 78]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000128 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 79]
+  [IF]  StallF: 0
+  [ID]  PC: 0x0000012c | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 80]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000130 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 81]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000134 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 82]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000138 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 83]
+  [IF]  StallF: 0
+  [ID]  PC: 0x0000013c | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 84]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000140 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 85]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000144 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 86]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000148 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 87]
+  [IF]  StallF: 0
+  [ID]  PC: 0x0000014c | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 88]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000150 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 89]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000154 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 90]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000158 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 91]
+  [IF]  StallF: 0
+  [ID]  PC: 0x0000015c | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 92]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000160 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 93]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000164 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 94]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000168 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 95]
+  [IF]  StallF: 0
+  [ID]  PC: 0x0000016c | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 96]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000170 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 97]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000174 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 98]
+  [IF]  StallF: 0
+  [ID]  PC: 0x00000178 | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+
+[CYCLE 99]
+  [IF]  StallF: 0
+  [ID]  PC: 0x0000017c | Inst: 0xxxxxxxxx | StallD: 0 | FlushD: 0
+  [EX]  ALUOut: 0xxxxxxxxx | FwdAE: 00, FwdBE: 00 | FlushE: 0 | BranchCtrl: 0
+  [MEM] WriteData: 0xxxxxxxxx | MemWriteEn: 0
+  [WB]  RD(Target):  x | WritebackData: 0xxxxxxxxx | RegWriteEn: 0
+  -------------------------------------------------------------------------------------
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_riscv_pipeline_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+Command: synth_design -rtl -rtl_skip_mlo -name rtl_1
+Starting synth_design
+Using part: xc7k70tfbv676-1
+Top: riscv_pipeline
+INFO: [Device 21-403] Loading part xc7k70tfbv676-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 9986
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 8810.137 ; gain = 428.664 ; free physical = 2572 ; free virtual = 11473
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'riscv_pipeline' [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/riscv_pipeline.v:7]
+INFO: [Synth 8-6157] synthesizing module 'fetch_stage' [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/fetch_stage.v:2]
+INFO: [Synth 8-3876] $readmem data file 'imem32.mem' is read successfully [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/fetch_stage.v:49]
+INFO: [Synth 8-6155] done synthesizing module 'fetch_stage' (0#1) [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/fetch_stage.v:2]
+INFO: [Synth 8-6157] synthesizing module 'decode_stage' [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/decode_stage.v:2]
+INFO: [Synth 8-6157] synthesizing module 'control_unit' [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/decode_stage.v:154]
+INFO: [Synth 8-226] default block is never used [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/decode_stage.v:241]
+INFO: [Synth 8-6155] done synthesizing module 'control_unit' (0#1) [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/decode_stage.v:154]
+INFO: [Synth 8-6157] synthesizing module 'regfile' [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/decode_stage.v:293]
+INFO: [Synth 8-6155] done synthesizing module 'regfile' (0#1) [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/decode_stage.v:293]
+INFO: [Synth 8-6157] synthesizing module 'extend' [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/decode_stage.v:357]
+INFO: [Synth 8-226] default block is never used [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/decode_stage.v:363]
+INFO: [Synth 8-6155] done synthesizing module 'extend' (0#1) [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/decode_stage.v:357]
+INFO: [Synth 8-6155] done synthesizing module 'decode_stage' (0#1) [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/decode_stage.v:2]
+INFO: [Synth 8-6157] synthesizing module 'execute_stage' [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/execute_stage.v:3]
+INFO: [Synth 8-6157] synthesizing module 'alu' [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/execute_stage.v:130]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (0#1) [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/execute_stage.v:130]
+INFO: [Synth 8-6157] synthesizing module 'pcsrc_logic' [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/execute_stage.v:168]
+INFO: [Synth 8-6155] done synthesizing module 'pcsrc_logic' (0#1) [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/execute_stage.v:168]
+INFO: [Synth 8-6155] done synthesizing module 'execute_stage' (0#1) [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/execute_stage.v:3]
+INFO: [Synth 8-6157] synthesizing module 'memory_stage' [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/memory_stage.v:3]
+INFO: [Synth 8-3876] $readmem data file 'dmem32.mem' is read successfully [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/memory_stage.v:37]
+INFO: [Synth 8-6155] done synthesizing module 'memory_stage' (0#1) [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/memory_stage.v:3]
+WARNING: [Synth 8-7071] port 'RDM_out' of module 'memory_stage' is unconnected for instance 'u_ma' [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/riscv_pipeline.v:190]
+WARNING: [Synth 8-7023] instance 'u_ma' of module 'memory_stage' has 16 connections declared, but only 15 given [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/riscv_pipeline.v:190]
+INFO: [Synth 8-6157] synthesizing module 'writeback_stage' [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/writeback_stage.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'writeback_stage' (0#1) [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/writeback_stage.v:3]
+WARNING: [Synth 8-7071] port 'RDW' of module 'writeback_stage' is unconnected for instance 'u_wb' [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/riscv_pipeline.v:209]
+WARNING: [Synth 8-7071] port 'RegWriteW_out' of module 'writeback_stage' is unconnected for instance 'u_wb' [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/riscv_pipeline.v:209]
+WARNING: [Synth 8-7023] instance 'u_wb' of module 'writeback_stage' has 9 connections declared, but only 7 given [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/riscv_pipeline.v:209]
+INFO: [Synth 8-6157] synthesizing module 'hazard_unit' [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/hazard_unit.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'hazard_unit' (0#1) [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/hazard_unit.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'riscv_pipeline' (0#1) [/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/riscv_pipeline.v:7]
+WARNING: [Synth 8-7129] Port RS1E[4] in module execute_stage is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RS1E[3] in module execute_stage is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RS1E[2] in module execute_stage is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RS1E[1] in module execute_stage is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RS1E[0] in module execute_stage is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RS2E[4] in module execute_stage is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RS2E[3] in module execute_stage is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RS2E[2] in module execute_stage is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RS2E[1] in module execute_stage is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RS2E[0] in module execute_stage is either unconnected or has no load
+WARNING: [Synth 8-7129] Port funct7[6] in module control_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port funct7[4] in module control_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port funct7[3] in module control_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port funct7[2] in module control_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port funct7[1] in module control_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port funct7[0] in module control_unit is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 8887.074 ; gain = 505.602 ; free physical = 2476 ; free virtual = 11380
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 8901.918 ; gain = 520.445 ; free physical = 2476 ; free virtual = 11379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 8901.918 ; gain = 520.445 ; free physical = 2476 ; free virtual = 11379
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 8901.926 ; gain = 0.000 ; free physical = 2676 ; free virtual = 11579
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 9043.664 ; gain = 0.000 ; free physical = 2700 ; free virtual = 11620
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 9132.270 ; gain = 750.797 ; free physical = 2642 ; free virtual = 11568
+34 Infos, 21 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 9132.270 ; gain = 999.141 ; free physical = 2642 ; free virtual = 11568
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2428.931; main = 2422.549; forked = 6.382
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 9237.402; main = 9130.273; forked = 107.129
+launch_runs synth_1 -jobs 8
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Tue Jun 23 08:52:23 2026] Launched synth_1...
+Run output will be captured here: /home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/vivado/project_data/vivado_work.runs/synth_1/runme.log

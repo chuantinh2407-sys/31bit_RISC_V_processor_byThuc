@@ -1,0 +1,31 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Thu Jun 25 22:04:59 2026
+# Process ID: 15560
+# Current directory: /home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor
+# Command line: vivado ./vivado/project_data/vivado_work.xpr
+# Log file: /home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/vivado.log
+# Journal file: /home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/vivado.jou
+# Running On: nguyenvanthuc2407, OS: Linux, CPU Frequency: 1095.838 MHz, CPU Physical cores: 16, Host memory: 15981 MB
+#-----------------------------------------------------------
+start_gui
+open_project ./vivado/project_data/vivado_work.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+open_run synth_1 -name synth_1
+synth_design -top riscv_pipeline -part xc7k70tfbv676-1 -lint 
+close_design
+open_run impl_1
+close_design
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+close_design
+open_run synth_1 -name synth_1
+close_design
+open_run impl_1

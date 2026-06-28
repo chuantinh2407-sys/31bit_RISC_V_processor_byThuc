@@ -1,0 +1,16 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../../rtl/decode_stage.v" \
+"../../../../../../rtl/execute_stage.v" \
+"../../../../../../rtl/fetch_stage.v" \
+"../../../../../../rtl/hazard_unit.v" \
+"../../../../../../rtl/memory_stage.v" \
+"../../../../../../rtl/riscv_pipeline.v" \
+"../../../../../../rtl/writeback_stage.v" \
+"../../../../../../tb/tb_riscv_pipeline.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

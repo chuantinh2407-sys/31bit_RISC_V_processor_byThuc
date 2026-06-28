@@ -1,0 +1,23 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/decode_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decode_stage
+INFO: [VRFC 10-311] analyzing module control_unit
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-311] analyzing module extend
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/execute_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module execute_stage
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module pcsrc_logic
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/fetch_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fetch_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/hazard_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hazard_unit
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/memory_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module memory_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/riscv_pipeline.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module riscv_pipeline
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/writeback_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module writeback_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/tb/tb_riscv_pipeline.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_riscv_pipeline
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/vivado/project_data/vivado_work.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

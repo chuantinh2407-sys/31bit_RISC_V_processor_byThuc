@@ -1,0 +1,134 @@
+$date
+	Tue Jun 23 01:26:11 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_memory_stage $end
+$var wire 2 ! ResultSrcW [1:0] $end
+$var wire 1 " RegWriteW $end
+$var wire 32 # ReaddataW [31:0] $end
+$var wire 5 $ RDW [4:0] $end
+$var wire 32 % PCPlus4W [31:0] $end
+$var wire 32 & AluResultW [31:0] $end
+$var reg 32 ' AluResultM [31:0] $end
+$var reg 1 ( CLK $end
+$var reg 1 ) MemWriteM $end
+$var reg 32 * PCPlus4M [31:0] $end
+$var reg 5 + RDM [4:0] $end
+$var reg 1 , RESET $end
+$var reg 1 - RegWriteM $end
+$var reg 2 . ResultSrcM [1:0] $end
+$var reg 32 / WriteDataM [31:0] $end
+$scope module uut $end
+$var wire 32 0 AluResultM [31:0] $end
+$var wire 1 ( CLK $end
+$var wire 1 ) MemWriteM $end
+$var wire 32 1 PCPlus4M [31:0] $end
+$var wire 5 2 RDM [4:0] $end
+$var wire 5 3 RDM_out [4:0] $end
+$var wire 1 , RESET $end
+$var wire 32 4 ReadData [31:0] $end
+$var wire 1 - RegWriteM $end
+$var wire 2 5 ResultSrcM [1:0] $end
+$var wire 32 6 WriteDataM [31:0] $end
+$var reg 32 7 AluResultW [31:0] $end
+$var reg 32 8 PCPlus4W [31:0] $end
+$var reg 5 9 RDW [4:0] $end
+$var reg 32 : ReaddataW [31:0] $end
+$var reg 1 " RegWriteW $end
+$var reg 2 ; ResultSrcW [1:0] $end
+$var integer 32 < i [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b100000000 <
+b0 ;
+b0 :
+b0 9
+b0 8
+b0 7
+b0 6
+b0 5
+b10101010 4
+b0 3
+b0 2
+b0 1
+b0 0
+b0 /
+b0 .
+0-
+1,
+b0 +
+b0 *
+0)
+0(
+b0 '
+b0 &
+b0 %
+b0 $
+b0 #
+0"
+b0 !
+$end
+#5000
+1(
+#10000
+0(
+0,
+#15000
+b10101010 #
+b10101010 :
+1(
+#20000
+0(
+#25000
+1(
+#30000
+0(
+#35000
+1(
+#40000
+b11001100 4
+0(
+b11011110101011011011111011101111 /
+b11011110101011011011111011101111 6
+b1010 '
+b1010 0
+1)
+#45000
+b11001100 #
+b11001100 :
+b1010 &
+b1010 7
+b11011110101011011011111011101111 4
+1(
+#50000
+0(
+0)
+#55000
+b11011110101011011011111011101111 #
+b11011110101011011011111011101111 :
+1(
+#60000
+0(
+#65000
+1(
+#70000
+0(
+#75000
+1(
+#80000
+0(
+#85000
+1(
+#90000
+0(

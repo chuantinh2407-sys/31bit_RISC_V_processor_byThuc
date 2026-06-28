@@ -1,0 +1,13 @@
+0.7
+2020.2
+Oct 13 2023
+20:21:30
+/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/decode_stage.v,1780384324,verilog,,/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/execute_stage.v,,control_unit;decode_stage;extend;regfile,,,,,,,,
+/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/execute_stage.v,1780384911,verilog,,/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/fetch_stage.v,,alu;execute_stage;pcsrc_logic,,,,,,,,
+/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/fetch_stage.v,1782144418,verilog,,/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/hazard_unit.v,,fetch_stage,,,,,,,,
+/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/hazard_unit.v,1780385261,verilog,,/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/memory_stage.v,,hazard_unit,,,,,,,,
+/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/memory_stage.v,1782144476,verilog,,/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/riscv_pipeline.v,,memory_stage,,,,,,,,
+/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/riscv_pipeline.v,1782152203,verilog,,/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/writeback_stage.v,,riscv_pipeline,,,,,,,,
+/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/rtl/writeback_stage.v,1780385074,verilog,,/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/tb/tb_riscv_pipeline.v,,writeback_stage,,,,,,,,
+/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/tb/tb_riscv_pipeline.v,1782152389,verilog,,,,tb_riscv_pipeline,,,,,,,,
+/home/nguyen-van-thuc/ic_workspace/vanthuc/mini_projects/projects_document/prj_vscode/32_bit_Pipelining_RISC_V_Processor/vivado/project_data/vivado_work.sim/sim_1/behav/xsim/glbl.v,1697210495,verilog,,,,glbl,,,,,,,,
