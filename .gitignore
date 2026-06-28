@@ -1,0 +1,25 @@
+# Vivado/Vitis generated files
+*.jou
+*.log
+*.pb
+*.wdb
+*.str
+*.xpr
+vivado/
+.vivado/
+*.sim/
+*.runs/
+*.ip_user_files/
+*.hw/
+*.cache/
+*.gen/
+*.srcs/sources_1/ip/
+*.srcs/sim_1/
+
+# Simulation files
+*.vcd
+*.wcfg
+
+# OS junk
+.DS_Store
+Thumbs.db
